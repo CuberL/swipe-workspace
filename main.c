@@ -4,9 +4,8 @@
 #include <sys/epoll.h>
 #include <fcntl.h>
 #include <stdio.h>
-
-int INTERVAL = 100; // in ms
-int THRESHOLD = 10; 
+#define INTERVAL 100 // in ms
+#define THRESHOLD 10 
 
 int find (char *src, char *tgt) {
 	int pos = 0;
