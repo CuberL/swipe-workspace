@@ -31,4 +31,4 @@ $ swipe_workspace
 
 大家使用的触控板和使用习惯不同，可能需要对源码做少量修改，源码中有两个常量：一个是INTERVAL，指的是两次动作触发最短时间间隔；另一个是THRESHOLD，这个是一个触发的阈值，如果触发太灵敏，可以试着调高，如果觉得触发太迟钝，可以试着调低。
 
-另外，Linux Mint Cinnamon使用`ctrl+alt+←`和`ctrl+alt+→`来进行工作区的切换，不同系统需要修改源码中的do_left和do_right来进行响应调整。
+另外，Linux Mint Cinnamon使用`ctrl+alt+←`和`ctrl+alt+→`来进行工作区的切换，不同系统需要修改源码中的`do_left`和`do_right`来进行响应调整。
