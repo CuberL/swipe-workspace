@@ -108,7 +108,6 @@ int dispatch (struct libinput *li) {
 	libinput_dispatch(li);
 }
 
-
 int main () {
 	int dev = scan_device(0x0b);
 	if (dev == -1) {
