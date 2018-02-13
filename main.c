@@ -1,9 +1,13 @@
 #include <libinput.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/epoll.h>
+#include <sys/time.h>
 #include <fcntl.h>
 #include <stdio.h>
+#include <string.h>
 #define INTERVAL 100 // in ms
 #define THRESHOLD 10 
 
@@ -40,6 +44,12 @@ int scan_device (int ev) {
 		}
 	}
 	return -1;
+}
+
+int dispatch (struct libinput *li) {
+	struct epoll_event ep[32];
+	epoll_wait(libinput_get_fd(li), ep, 32, -1);
+	libinput_dispatch(li);
 }
 
 unsigned long timestamp () {
@@ -100,12 +110,6 @@ void handle_pointer_motion (struct libinput_event *ev) {
 		}
 	}
 	libinput_event_destroy(ev);
-}
-
-int dispatch (struct libinput *li) {
-	struct epoll_event ep[32];
-	epoll_wait(libinput_get_fd(li), ep, 32, -1);
-	libinput_dispatch(li);
 }
 
 int main () {
