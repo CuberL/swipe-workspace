@@ -6,7 +6,7 @@
 
 ## 依赖
 
-程序基于 [libinput](https://wayland.freedesktop.org/libinput/doc/latest/) ，使用C语言开发，其中切换工作区还用到了 [xdotool](https://github.com/jordansissel/xdotool) 来模拟按键，所以编译需要有 gcc 、xdotool 以及 libinput 库：
+程序基于[libinput](https://wayland.freedesktop.org/libinput/doc/latest/)，使用C语言开发，其中切换工作区还用到了[xdotool](https://github.com/jordansissel/xdotool)来模拟按键，所以编译需要有gcc、xdotool以及libinput库：
 
 ```
 $ sudo apt-get install gcc libinput-dev xdotool
