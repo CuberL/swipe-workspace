@@ -8,8 +8,11 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <string.h>
+
 #define INTERVAL 100 // in ms
 #define THRESHOLD 10 
+#define LEFT_SWIPE "xdotool key alt+ctrl+Right"
+#define RIGHT_SWIPE "xdotool key alt+ctrl+Left"
 
 int find (char *src, char *tgt) {
 	int pos = 0;
@@ -68,11 +71,11 @@ int close_restricted (int fd, void *user_data) {
 }
 
 void do_left() {
-	system("xdotool key alt+ctrl+Right");
+	system(LEFT_SWIPE);
 }
 
 void do_right() {
-	system("xdotool key alt+ctrl+Left");
+	system(RIGHT_SWIPE);
 }
 
 void clean_old_events (struct libinput *li, int direction) {
