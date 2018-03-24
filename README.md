@@ -1,34 +1,33 @@
 # swipe-workspace
 
-一个可以用触控板切换工作区的程序,基于libinput实现。
+This is a program that can use the touchpad to switch workspaces, base on libinput.
 
-以下文档使用测试环境均为Linux Mint 18.1 Cinnamon 64-bit，机器为Lenovo Y510P。
+The test environment below is Linux Mint 18.1 Cinnamon 64-bit, in my Lenovo Y510p laptop.
 
-## 依赖
+## Dependencies
 
-程序基于[libinput](https://wayland.freedesktop.org/libinput/doc/latest/)，使用C语言开发，其中切换工作区还用到了[xdotool](https://github.com/jordansissel/xdotool)来模拟按键，所以编译需要有gcc、xdotool以及libinput库：
+The program is written in C and base on [libinput](https://wayland.freedesktop.org/libinput/doc/latest/), it use [xdotool](https://github.com/jordansissel/xdotool) to switch workspaces. So you need gcc, xdotool and libinput to compile it.
 
 ```
 $ sudo apt-get install gcc libinput-dev xdotool
 ```
 
-## 编译
+## Compile
 
-直接编译即可
 ```
 $ gcc main.c -o swipe_workspace -linput
 ```
 
-然后可以自行建立软链到 /usr/bin 目录下。
+And add it into you PATH.
 
-## 使用 
+## Usage 
 
 ```
 $ swipe_workspace
 ```
 
-## 参数调节
+## Something may need to adjust
 
-大家使用的触控板和使用习惯不同，可能需要对源码做少量修改，源码中有两个常量：一个是 INTERVAL ，指的是两次动作触发最短时间间隔；另一个是 THRESHOLD ，这个是一个触发的阈值，如果触发太灵敏，可以试着调高，如果觉得触发太迟钝，可以试着调低。
+Because of the difference with touchpad and usage habit, you may need to edit the code by yourself. There is two constant in the code: INTERVAL, means the shortest interval between two switch actions; and another one is the THRESHOLD, if you found it is too sensitive, you can increase it.
 
-另外，Linux Mint Cinnamon 使用 `ctrl+alt+←` 和 `ctrl+alt+→` 来进行工作区的切换，不同系统需要修改源码中的 LEFT\_SWIPE 和 RIGHT\_SWIPE 来进行响应调整。
+By the way, Linux Mint Cinnamon use `ctrl+alt+←` and `ctrl+alt+→` to switch the workspace, you may need to change the code if you use other operating system.
