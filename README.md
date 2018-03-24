@@ -4,6 +4,8 @@ This is a program that can use the touchpad to switch workspaces, base on libinp
 
 The test environment below is Linux Mint 18.1 Cinnamon 64-bit, in my Lenovo Y510p laptop.
 
+![](http://7tebhf.com1.z0.glb.clouddn.com/output1.gif)
+
 ## Dependencies
 
 The program is written in C and base on [libinput](https://wayland.freedesktop.org/libinput/doc/latest/), it use [xdotool](https://github.com/jordansissel/xdotool) to switch workspaces. So you need gcc, xdotool and libinput to compile it.
