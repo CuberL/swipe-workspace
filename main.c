@@ -32,6 +32,12 @@ int find (char *src, char *tgt) {
 }
 
 int scan_device (int ev) {
+	// check the access permission
+	if (access("/proc/bus/input/devices", R_OK) != 0) {
+		printf("permission denied\n");
+		exit(-1);
+	}
+
 	FILE *f = fopen("/proc/bus/input/devices", "r");
 	char s[1024];
 	int x, pos, y;
