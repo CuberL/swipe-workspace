@@ -133,8 +133,13 @@ int main () {
 		open_restricted,
 		close_restricted
 	};
+
 	struct libinput *li = libinput_path_create_context(&interface, NULL);
 	struct libinput_device *device = libinput_path_add_device(li, dev_str);
+	if (device == NULL) {
+		printf("get device failed, please check your permissions\n");
+		return -1;
+	} 
 	struct libinput_event *ev;
 	unsigned long last_left = 0, last_right = 0, t = 0;
 
