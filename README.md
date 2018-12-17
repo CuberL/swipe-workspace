@@ -4,7 +4,7 @@ This is a program that can use the touchpad to switch workspaces, base on libinp
 
 The test environment below is Linux Mint 18.1 Cinnamon 64-bit, on my Lenovo Y510p laptop.
 
-![](http://7tebhf.com1.z0.glb.clouddn.com/output1.gif)
+![](http://qiniu.cuberl.com/output1.gif)
 
 ## Dependencies
 
